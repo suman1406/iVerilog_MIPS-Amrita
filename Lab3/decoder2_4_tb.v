@@ -1,10 +1,8 @@
-module testbench_decoder_2x4;
+module decoder2_4_tb;
 
-  // Inputs
-  reg [1:0] A;
+  reg A;
   
   // Outputs
-  wire Y0, Y1, Y2, Y3;
 
   // Instantiate the decoder
   decoder2_4 uut (
