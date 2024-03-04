@@ -2,9 +2,8 @@ module decoder2_4_tb;
 
   reg A;
   
-  // Outputs
+  wire Y0, Y1, Y2, Y3;
 
-  // Instantiate the decoder
   decoder2_4 uut (
     A,
     Y0,
