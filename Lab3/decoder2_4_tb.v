@@ -1,21 +1,34 @@
-// Testbench
-module decoder2_4_tb;
+module testbench_decoder_2x4;
 
-    reg A;
-    wire Y;
+  // Inputs
+  reg [1:0] A;
+  
+  // Outputs
+  wire Y0, Y1, Y2, Y3;
 
-    decoder2_4 uut(A, Y);
+  // Instantiate the decoder
+  decoder2_4 uut (
+    A,
+    Y0,
+    Y1,
+    Y2,
+    Y3
+  );
 
-    initial begin
-        $monitor("A = %b; Y = %b", A, Y);
-        A = 0;
-        #10
-        A = 0;
-        #10
-        A = 1;
-        #10
-        A = 1;
-        #10
-        $finish;
+  // Stimulus
+  integer i; // Declare the loop variable outside the initial block
+
+  initial begin
+    // Test all possible input combinations
+    for (i = 0; i < 4; i = i + 1) begin
+      A = i;
+      #10;  // Wait for a few time units to observe the outputs
+      // Display the results
+      $display("Input: %b, Outputs: Y0=%b, Y1=%b, Y2=%b, Y3=%b", A, Y0, Y1, Y2, Y3);
     end
+
+    // Stop simulation
+    $finish;
+  end
+
 endmodule
