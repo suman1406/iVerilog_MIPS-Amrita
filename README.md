@@ -47,7 +47,3 @@ This repository contains laboratory exercises and evaluation materials for the M
 
 - Suman Panigrahi
 - Sravani Oruganti
-
-## License
-
-This project is licensed under the MIT License.
